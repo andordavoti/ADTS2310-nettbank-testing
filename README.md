@@ -2,9 +2,12 @@
 
 ## Enhetstesting:
 
-Fordeling av arbeidsoppgaver:
+**Fordeling av arbeidsoppgaver:**
 
 EnhetstestBankController  - Sindre
+
 EnhetstestSikkerhet       - Andor
+
 EnhetstestKundeController - Andor
+
 EnhetstestKontoController - Thomas
