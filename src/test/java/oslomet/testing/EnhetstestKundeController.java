@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -34,10 +33,8 @@ public class EnhetstestKundeController {
     @Test
     public void hentAlle_loggetInn() {
         // arrange
-        List<Kunde> kunder = new ArrayList<> ();
-        Kunde enKunde = new Kunde("01010110523",
-                "Lene", "Jensen", "Askerveien 22", "3270",
-                "Asker", "22224444", "HeiHei");
+        List<Kunde> kunder = new ArrayList<>();
+        Kunde enKunde = new Kunde("01010110523", "Lene", "Jensen", "Askerveien 22", "3270", "Asker", "22224444", "HeiHei");
 
         kunder.add(enKunde);
 
@@ -66,9 +63,7 @@ public class EnhetstestKundeController {
     @Test
     public void lagreKunde_loggetInn() {
         // arrange
-        Kunde enKunde = new Kunde("01010110523",
-                "Lene", "Jensen", "Askerveien 22", "3270",
-                "Asker", "22224444", "HeiHei");
+        Kunde enKunde = new Kunde("01010110523", "Lene", "Jensen", "Askerveien 22", "3270", "Asker", "22224444", "HeiHei");
 
         when(sjekk.loggetInn()).thenReturn("01010110523");
         when(repository.registrerKunde(enKunde)).thenReturn("OK");
@@ -83,9 +78,7 @@ public class EnhetstestKundeController {
     @Test
     public void lagreKunde_ikkeLoggetInn() {
         // arrange
-        Kunde enKunde = new Kunde("01010110523",
-                "Lene", "Jensen", "Askerveien 22", "3270",
-                "Asker", "22224444", "HeiHei");
+        Kunde enKunde = new Kunde("01010110523", "Lene", "Jensen", "Askerveien 22", "3270", "Asker", "22224444", "HeiHei");
 
         when(sjekk.loggetInn()).thenReturn(null);
 
@@ -99,9 +92,7 @@ public class EnhetstestKundeController {
     @Test
     public void endre_loggetInn() {
         // arrange
-        Kunde enKunde = new Kunde("01010110523",
-                "Lene", "Jensen", "Askerveien 22", "3270",
-                "Asker", "22224444", "HeiHei");
+        Kunde enKunde = new Kunde("01010110523", "Lene", "Jensen", "Askerveien 22", "3270", "Asker", "22224444", "HeiHei");
 
         when(sjekk.loggetInn()).thenReturn("01010110523");
         when(repository.endreKundeInfo(enKunde)).thenReturn("OK");
@@ -116,9 +107,7 @@ public class EnhetstestKundeController {
     @Test
     public void endre_ikkeLoggetInn() {
         // arrange
-        Kunde enKunde = new Kunde("01010110523",
-                "Lene", "Jensen", "Askerveien 22", "3270",
-                "Asker", "22224444", "HeiHei");
+        Kunde enKunde = new Kunde("01010110523", "Lene", "Jensen", "Askerveien 22", "3270", "Asker", "22224444", "HeiHei");
 
         when(sjekk.loggetInn()).thenReturn(null);
 
