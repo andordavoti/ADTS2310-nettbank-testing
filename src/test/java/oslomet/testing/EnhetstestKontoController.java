@@ -1,6 +1,3 @@
-
-
-
 package oslomet.testing;
 
 import org.junit.Test;
