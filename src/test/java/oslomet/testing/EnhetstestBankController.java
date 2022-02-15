@@ -39,9 +39,7 @@ public class EnhetstestBankController {
     @Test
     public void hentKundeInfo_loggetInn() {
         // arrange
-        Kunde enKunde = new Kunde("01010110523",
-                "Lene", "Jensen", "Askerveien 22", "3270",
-                "Asker", "22224444", "HeiHei");
+        Kunde enKunde = new Kunde("01010110523", "Lene", "Jensen", "Askerveien 22", "3270", "Asker", "22224444", "HeiHei");
 
         when(sjekk.loggetInn()).thenReturn("01010110523");
         when(repository.hentKundeInfo(anyString())).thenReturn(enKunde);
@@ -69,10 +67,8 @@ public class EnhetstestBankController {
     public void hentKonti_loggetInn() {
         // arrange
         List<Konto> konti = new ArrayList<>();
-        Konto konto1 = new Konto("105010123456", "01010110523",
-                720, "Lønnskonto", "NOK", null);
-        Konto konto2 = new Konto("105010123456", "12345678901",
-                1000, "Lønnskonto", "NOK", null);
+        Konto konto1 = new Konto("105010123456", "01010110523", 720, "Lønnskonto", "NOK", null);
+        Konto konto2 = new Konto("105010123456", "12345678901", 1000, "Lønnskonto", "NOK", null);
         konti.add(konto1);
         konti.add(konto2);
 
@@ -104,7 +100,7 @@ public class EnhetstestBankController {
         when(sjekk.loggetInn()).thenReturn(null);
 
         // act
-        Konto resultat = bankController.hentTransaksjoner("22351010110","2000-01-01","2000-01-04");
+        Konto resultat = bankController.hentTransaksjoner("22351010110", "2000-01-01", "2000-01-04");
 
         // assert
         assertNull(resultat);
@@ -131,8 +127,7 @@ public class EnhetstestBankController {
     public void hentSaldi_loggetInn() {
         // arrange
         List<Konto> saldo = new ArrayList<>();
-        Konto konto3 = new Konto("105010123451", "01010110529",
-                666, "Lønnskonto", "NOK", null);
+        Konto konto3 = new Konto("105010123451", "01010110529", 666, "Lønnskonto", "NOK", null);
         saldo.add(konto3);
 
         when(sjekk.loggetInn()).thenReturn("105010123451");
@@ -162,11 +157,9 @@ public class EnhetstestBankController {
     public void registerBetaling_loggetInn() {
         // arrange
         List<Transaksjon> transaksjon = new ArrayList<>();
-        Transaksjon enTransaksjon = new Transaksjon(4, "201020123472",
-                5000.5, "2015-03-30", "Husleie", "105010123456", "1");
+        Transaksjon enTransaksjon = new Transaksjon(4, "201020123472", 5000.5, "2015-03-30", "Husleie", "105010123456", "1");
         transaksjon.add(enTransaksjon);
-        Konto konto3 = new Konto("105010123451", "01010110529",
-                666, "Lønnskonto", "NOK", null);
+        Konto konto3 = new Konto("105010123451", "01010110529", 666, "Lønnskonto", "NOK", null);
 
         when(sjekk.loggetInn()).thenReturn(konto3.getPersonnummer());
         when(repository.registrerBetaling(enTransaksjon)).thenReturn("OK");
@@ -182,8 +175,7 @@ public class EnhetstestBankController {
     @Test
     public void registerBetaling_ikkeLoggetInn() {
         // arrange
-        Transaksjon enTransaksjon = new Transaksjon(4, "201020123472",
-                5000.5, "2015-03-30", "Husleie", "105010123456", "1");
+        Transaksjon enTransaksjon = new Transaksjon(4, "201020123472", 5000.5, "2015-03-30", "Husleie", "105010123456", "1");
         when(sjekk.loggetInn()).thenReturn(null);
 
         // act
@@ -197,14 +189,11 @@ public class EnhetstestBankController {
     public void hentBetaling_loggetInn() {
         // arrange
         List<Transaksjon> transaksjon = new ArrayList<>();
-        Transaksjon enTransaksjon = new Transaksjon(4, "201020123472",
-                5000.5, "2015-03-30", "Husleie", "105010123456", "1");
+        Transaksjon enTransaksjon = new Transaksjon(4, "201020123472", 5000.5, "2015-03-30", "Husleie", "105010123456", "1");
         transaksjon.add(enTransaksjon);
 
 
-        Konto konto3 = new Konto("105010123451", "01010110529",
-                666, "Lønnskonto", "NOK", null);
-
+        Konto konto3 = new Konto("105010123451", "01010110529", 666, "Lønnskonto", "NOK", null);
 
 
         when(sjekk.loggetInn()).thenReturn("105010123451");
@@ -224,7 +213,7 @@ public class EnhetstestBankController {
         when(sjekk.loggetInn()).thenReturn(null);
 
         // act
-        List <Transaksjon> resultat = bankController.hentBetalinger();
+        List<Transaksjon> resultat = bankController.hentBetalinger();
 
         // assert
         assertNull(resultat);
@@ -234,12 +223,10 @@ public class EnhetstestBankController {
     public void utforBetaling_loggetInn() {
         // arrange
         List<Transaksjon> transaksjoner = new ArrayList<>();
-        Transaksjon transaksjon = new Transaksjon(4, "201020123472",
-                5000.5, "2015-03-30", "Husleie", "105010123456", "1");
+        Transaksjon transaksjon = new Transaksjon(4, "201020123472", 5000.5, "2015-03-30", "Husleie", "105010123456", "1");
         transaksjoner.add(transaksjon);
 
-        Konto konto3 = new Konto("105010123451", "01010110529",
-                666, "Lønnskonto", "NOK", null);
+        Konto konto3 = new Konto("105010123451", "01010110529", 666, "Lønnskonto", "NOK", null);
         konto3.setTransaksjoner(transaksjoner);
 
         when(sjekk.loggetInn()).thenReturn("105010123451");
@@ -258,14 +245,13 @@ public class EnhetstestBankController {
     public void utforBetaling_ikkeLoggetInn() {
         // arrange
         List<Transaksjon> transaksjon = new ArrayList<>();
-        Transaksjon enTransaksjon = new Transaksjon(4, "201020123472",
-                5000.5, "2015-03-30", "Husleie", "105010123456", "1");
+        Transaksjon enTransaksjon = new Transaksjon(4, "201020123472", 5000.5, "2015-03-30", "Husleie", "105010123456", "1");
         transaksjon.add(enTransaksjon);
 
         when(sjekk.loggetInn()).thenReturn(null);
 
         // act
-        List <Transaksjon> resultat = bankController.utforBetaling(enTransaksjon.getTxID());
+        List<Transaksjon> resultat = bankController.utforBetaling(enTransaksjon.getTxID());
 
         // assert
         assertNull(resultat);
@@ -274,9 +260,7 @@ public class EnhetstestBankController {
     @Test
     public void endre_loggetInn() {
         // arrange
-        Kunde enKunde = new Kunde("01010110523",
-                "Lene", "Jensen", "Askerveien 22", "3270",
-                "Asker", "22224444", "HeiHei");
+        Kunde enKunde = new Kunde("01010110523", "Lene", "Jensen", "Askerveien 22", "3270", "Asker", "22224444", "HeiHei");
 
         when(sjekk.loggetInn()).thenReturn("01010110523");
         when(repository.endreKundeInfo(any(Kunde.class))).thenReturn(enKunde.getPersonnummer());
@@ -291,9 +275,7 @@ public class EnhetstestBankController {
     @Test
     public void endre_ikkeLoggetInn() {
         // arrange
-        Kunde enKunde = new Kunde("01010110523",
-                "Lene", "Jensen", "Askerveien 22", "3270",
-                "Asker", "22224444", "HeiHei");
+        Kunde enKunde = new Kunde("01010110523", "Lene", "Jensen", "Askerveien 22", "3270", "Asker", "22224444", "HeiHei");
 
         when(sjekk.loggetInn()).thenReturn(null);
 
