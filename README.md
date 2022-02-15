@@ -10,4 +10,4 @@ EnhetstestSikkerhet       - Andor
 
 EnhetstestKundeController - Andor
 
-EnhetstestKontoController - Thomas
+EnhetstestKontoController - Andor
