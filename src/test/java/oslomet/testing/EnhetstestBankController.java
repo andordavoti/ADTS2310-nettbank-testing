@@ -12,6 +12,7 @@ import oslomet.testing.Models.Kunde;
 import oslomet.testing.Models.Transaksjon;
 import oslomet.testing.Sikkerhet.Sikkerhet;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +36,21 @@ public class EnhetstestBankController {
     @Mock
     // denne skal Mock'es
     private Sikkerhet sjekk;
+
+    @Mock
+    private DataSource dataSource;
+
+    @Test
+    public void initDB() {
+        // arrange
+        when(repository.initDB(dataSource)).thenReturn("OK");
+
+        // act
+        String resultat = bankController.initDB();
+
+        // assert
+        assertEquals("OK", resultat);
+    }
 
     @Test
     public void hentKundeInfo_loggetInn() {
