@@ -1,6 +1,6 @@
 # ADTS2310-nettbank-testing
 
-## Technologies:
+## Project technologies:
 
 **Frontend:** jQuery
 
