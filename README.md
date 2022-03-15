@@ -8,7 +8,7 @@
 
 ## Unit tests - JUnit
 
-**Location:** [src/test/java/oslomet/testing](https://github.com/andordavoti/ADTS2310-nettbank-testing/tree/master/src/test/java/oslomet/testing)
+[src/test/java/oslomet/testing](https://github.com/andordavoti/ADTS2310-nettbank-testing/tree/master/src/test/java/oslomet/testing)
 
 ## Integration tests - Postman
 
