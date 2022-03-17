@@ -14,6 +14,8 @@
 
 [**Docs**](https://andordavoti.notion.site/API-testing-with-Postman-c3bea584966c48d3b688b88dbc2f79b4)
 
+[**Postman workspace**](https://www.postman.com/andordavoti/workspace/adts2310-nettbank-testing/overview)
+
 **Postman collections:** [docs/postman-collections](https://github.com/andordavoti/ADTS2310-nettbank-testing/tree/master/docs/postman-collections)
 
 **Newman reports:** [docs/integration-testing-reports](https://github.com/andordavoti/ADTS2310-nettbank-testing/tree/master/docs/integration-testing-reports)
